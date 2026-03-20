@@ -1,0 +1,203 @@
+/* Sticky Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+  z-index: 9999;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+/* 3-Column Grid */
+.header-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; 
+  align-items: center;
+  width: 92%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Logo */
+/* Container for the 3D Canvas */
+.logo-3d-container {
+  width: 220px;
+  height: 180px;
+  pointer-events: none; 
+}
+
+/* Re-enable pointer events ONLY for the canvas drawing area */
+.logo-3d-container canvas {
+  pointer-events: auto;
+}
+
+/* Ensure the logo div in the grid doesn't squash the canvas */
+.logo {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+/* Nav Links */
+.navigation {
+  justify-self: center;
+}
+
+.navigation ul {
+  display: flex;
+  gap: 70px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  padding: 5px 0;
+}
+
+.navigation a:hover {
+  color: var(--accent);
+}
+
+.navigation a.active {
+  font-weight: 800;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Actions (CV + Theme Toggle) */
+.header-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cv-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--accent);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+/* Adjust button text color for Dark Mode readability */
+[data-theme='dark'] .cv-button {
+  color: #0F172A;
+}
+
+.cv-button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* Theme Toggle Styling */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--border);
+  color: var(--accent);
+}
+
+/* Mobile Responsiveness */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-main);
+  transition: 0.3s;
+}
+
+@media (max-width: 968px) {
+  .menu-toggle { 
+    display: flex;
+  }
+  
+  .navigation {
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    background: var(--header-bg);
+    background-color: #E5E5E5;
+    border-bottom: 1px solid var(--border);
+    transition: 0.3s;
+  }
+  [data-theme='dark'] .navigation {
+    background-color: var(--card-bg);
+  }
+
+  .navigation.nav-open { left: 0; }
+
+  .navigation ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    gap: 30px;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 95%; 
+  }
+
+  .logo-3d-container {
+    width: 120px;
+    height: 60px;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  /* Handle the CV and Theme buttons */
+  .header-actions {
+    gap: 10px;
+  }
+
+  .cv-button {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    gap: 6px;
+  }
+}
+

@@ -1,0 +1,104 @@
+/* Custom variables for easy theme switching */
+:root {
+  --bg-color: #F4F4F4;
+  --text-main: #2E2E2E;
+  --text-muted: #666666;
+  --accent: #4A90E2; 
+  --border: #E5E5E5;
+  --card-bg: #FFFFFF;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  /* Refined Pentagon Pattern - Light Mode */
+  --pattern-color: rgba(0, 0, 0, 0.04); 
+  --pattern-size: 60px;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Overrides variables when data-theme is 'dark' */
+[data-theme='dark'] {
+  --bg-color: #0F172A;
+  --text-main: #F1F5F9;
+  --text-muted: #94A3B8;
+  --accent: #22D3EE; 
+  --border: #1E293B;
+  --card-bg: #1E293B;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+  /* Refined Pentagon Pattern - Dark Mode */
+  --pattern-color: rgba(255, 255, 255, 0.03);
+}
+
+/* CORE LAYOUT & CLEAN PENTAGON PATTERN --- */
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+
+  background-image: 
+    /* Primary diagonals that form the pentagon peaks */
+    linear-gradient(30deg, var(--pattern-color) 12%, transparent 12.5%, transparent 87%, var(--pattern-color) 87.5%, var(--pattern-color)),
+    linear-gradient(150deg, var(--pattern-color) 12%, transparent 12.5%, transparent 87%, var(--pattern-color) 87.5%, var(--pattern-color)),
+    /* Centering gradient to smooth the intersections */
+    radial-gradient(circle at 50% 50%, transparent 60%, var(--pattern-color) 100%);
+  
+  /* Sizing ensures the pentagons remain geometric without becoming boxes */
+  background-size: var(--pattern-size) calc(var(--pattern-size) * 1.732), 
+                   var(--pattern-size) calc(var(--pattern-size) * 1.732), 
+                   calc(var(--pattern-size) * 2) calc(var(--pattern-size) * 2);
+  
+  background-attachment: fixed;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto !important; 
+  padding-top: 100px; 
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+
+.site-footer {
+  flex-shrink: 0;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+/* Visual decorations */
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+  &::before { left: 0; border-left-color: var(--border); }
+  &::after { right: 0; border-right-color: var(--border); }
+}
