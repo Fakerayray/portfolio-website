@@ -2,17 +2,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  perspective: 1000px;
-  
+  perspective: 1000px; 
 }
 
 .oiiai-cat-logo {
-  width: 120px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   cursor: pointer;
   transition: transform 0.2s ease;
   transform-style: preserve-3d;
-  filter: brightness(1.1);
 }
 
 .oiiai-cat-logo:hover {
