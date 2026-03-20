@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, Float, PerspectiveCamera } from '@react-three/drei';
-import oiaScene from '../../assets/oiiaicat/scene.gltf?url'
+//import oiaScene from '../../assets/oiiaicat/scene.gltf?url'
 
 
 function OiiaiModel({ url, velocity, setVelocity }) {
@@ -55,7 +55,7 @@ function Logo() {
         <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
           {/* Pass the velocity and the setter down to the model */}
           <OiiaiModel 
-            url={oiaScene} 
+            url="/oiiaicat/scene.gltf"
             velocity={velocity} 
             setVelocity={setVelocity} 
           />
