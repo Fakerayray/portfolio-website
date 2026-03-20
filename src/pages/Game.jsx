@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import '../components/ui/Game.css';
-import OIIAI_IMG from '../assets/oiiaicat.jpg'
+import OIIAI_IMG from '../assets/oiiaicat/scene.gltf?url'
 
 const Game = () => {
   const [activeSquare, setActiveSquare] = useState(null);
