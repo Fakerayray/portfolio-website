@@ -119,8 +119,8 @@ Easter Egg: Click on the among us image for a special surprise!
 
 ### Figure 13-14. Projects Night Mode
 
-![Alt text](./src/assets/ss_pages/Projects-Night-1.png)
-![Alt text](./src/assets/ss_pages/Projects-Night-2.png)
+![Alt text](./src/assets/ss_pages/Projects-night-1.png)
+![Alt text](./src/assets/ss_pages/Projects-night-2.png)
 
 ### Figure 15. Contact Day Mode
 
