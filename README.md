@@ -8,7 +8,7 @@ A high-performance, interactive portfolio built with **React**, **Vite**, and **
 
 This portfolio is far more than a static digital resume; it is an interactive ecosystem designed to showcase the intersection of low-level systems engineering and high-fidelity web performance. Built with **React** and **Vite**, the site serves as a technical sandbox where Cyber-Minimalist aesthetics meet complex frontend logic.
 
-From a custom 3D Three.js navigation system to a physics-integrated project grid, every element is built to demonstrate a "Systems-First" approach to web development. The architecture leverages a centralized **CSS Variable Engine**, allowing the entire UI—including 3D models and interactive sprites—to pivot seamlessly between a deep-space Dark Mode (Cyan accents) and a high-clarity Light Mode (Deep Blue accents).
+From a custom 3D Three.js navigation system to a physics-integrated project grid, every element is built to demonstrate a "Systems-First" approach to web development. The architecture leverages a centralized **CSS Variable Engine**, allowing the entire UI—including 3D models and interactive sprites to pivot seamlessly between a deep-space Dark Mode (Cyan accents) and a high-clarity Light Mode (Deep Blue accents).
 
 ---
 
@@ -53,7 +53,7 @@ Ensure you have the following installed:
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/Fakerayray/portfolio-website.git](https://github.com/Fakerayray/portfolio-website.git)
+    git clone [https://github.com/Fakerayray/portfolio-website.git]
     cd portfolio-website
     ```
 
