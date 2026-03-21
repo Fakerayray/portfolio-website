@@ -1,6 +1,7 @@
 import '../components/ui/Home.css';
 import { useNavigate } from 'react-router-dom';
 import profileImage from '../assets/pic.jpg';
+import heroImage from '../assets/pcImg.png';
 
 function Home() {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ function Home() {
         </div>
 
         <div className="hero-image">
-          <img src="/src/assets/pcImg.png" alt="Workstation" className="main-pc-img" />
+          <img src={heroImage} alt="Workstation" className="main-pc-img" />
         </div>
       </section>
     </div>

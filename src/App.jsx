@@ -12,7 +12,7 @@ import './App.css';
 function App() {
   return (
     // Wraps the application to enable URL-based navigation
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio-website">
       <div className="app-wrapper">
         <Header />
         <main className="main-content">
